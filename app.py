@@ -5,14 +5,11 @@ import numpy as np
 import time
 import datetime
 import os
-
-# Log in to HF with HF access token
+# Do not hardcode tokens in the code
+HF_TOKEN = os.environ.get("HF_TOKEN")  # Get from environment
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")  # Get from environment
 
 login(token=HF_TOKEN)
-
-# HF Tokens became useless once I ran out of HFApi Credits
-# Switch to Google API here
-
 
 # Initialize the agent with the DuckDuckGo search tool and a Hugging Face model
 # Use a smaller model that can run locally
@@ -53,7 +50,7 @@ agent = CodeAgent(tools=[suggest_menu], model=model, add_base_tools=True)
 agent.run("Prepare a formal menu for the party.")
 
 # The agent will calculate the time needed for the party preparation.
-agent = CodeAgent(tools=[], model=model, add_base_tools=True, additional_authorized_imports=['datetime'])
+agent = CodeAgent(tools=[suggest_menu,DuckDuckGoSearchTool()], model=model, add_base_tools=True, additional_authorized_imports=['datetime'])
 agent.run(
     """
     Alfred needs to prepare for the party. Here are the tasks:
