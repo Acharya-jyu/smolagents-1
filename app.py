@@ -7,12 +7,12 @@ import datetime
 import os
 
 # Log in to HF with HF access token
-HF_TOKEN="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"
+
 login(token=HF_TOKEN)
 
 # HF Tokens became useless once I ran out of HFApi Credits
 # Switch to Google API here
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA6qYrBc5mjSntF5V96auMGOOeB8CV-1Ao"
+
 
 # Initialize the agent with the DuckDuckGo search tool and a Hugging Face model
 # Use a smaller model that can run locally
