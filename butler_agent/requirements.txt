@@ -1,8 +1,4 @@
 duckduckgo_search
 markdownify
 requests
-smolagents>=1.0.0
-huggingface_hub>=0.20.1
-gradio>=4.0.0
-numpy
-litellm
+smolagents

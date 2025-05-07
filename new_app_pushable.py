@@ -61,25 +61,25 @@ try:
     print("Saving agent locally...")
     agent.save(temp_folder)
     
-    # Step 2: Create a README.md file
-    readme_content = """# Butler Menu Agent
+#     # Step 2: Create a README.md file
+#     readme_content = """# Butler Menu Agent
 
-This agent helps suggest menus for different types of parties and occasions.
+# This agent helps suggest menus for different types of parties and occasions.
 
-## Features
-- Menu suggestions based on occasion type
-- Web search capabilities 
-- Support for different party types
+# ## Features
+# - Menu suggestions based on occasion type
+# - Web search capabilities 
+# - Support for different party types
 
-## How to Use
-1. Ask the agent for menu suggestions for different types of parties
-2. Get customized menu recommendations
+# ## How to Use
+# 1. Ask the agent for menu suggestions for different types of parties
+# 2. Get customized menu recommendations
 
-Created with smolagents.
-"""
+# Created with smolagents.
+# """
     
-    with open(os.path.join(temp_folder, "README.md"), "w", encoding="utf-8") as f:
-        f.write(readme_content)
+#     with open(os.path.join(temp_folder, "README.md"), "w", encoding="utf-8") as f:
+#         f.write(readme_content)
     
     # Step 3: Use huggingface_hub to upload the folder
     repo_id = "acharya-jyu/SampleSmolagents-1"
