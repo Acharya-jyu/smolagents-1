@@ -45,11 +45,17 @@ def suggest_menu(occasion: str) -> str:
 
 # The agent will calculate the time needed for the party preparation.
 agent = CodeAgent(tools=[suggest_menu,DuckDuckGoSearchTool()], model=model, add_base_tools=True, additional_authorized_imports=['datetime'])
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 try: 
     # Push with custom metadata
+    repo_id_agent = "acharya-jyu/SampleSmolagents-1"  # Replace with your username
     agent.push_to_hub(
-        'acharya-jyu/SampleSmolagent-1',
-        commit_message="Initial commit"
+        repo_id=repo_id_agent,
+        token=HF_TOKEN,
+        private=False,  # Set to True if you want a private repository
+        commit_message="Initial commit for Smolagents tutorial"
     )
 except Exception as e:
     print(f"Error during push: {e}")
