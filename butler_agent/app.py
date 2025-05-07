@@ -10,10 +10,11 @@ from tools.web_search import DuckDuckGoSearchTool as WebSearch
 from tools.visit_webpage import VisitWebpageTool as VisitWebpage
 from tools.final_answer import FinalAnswerTool as FinalAnswer
 
-
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 model = LiteLLMModel(
 model_id='gemini/gemini-2.0-flash',
+api_key=GOOGLE_API_KEY
 api_base=None,
 )
 
