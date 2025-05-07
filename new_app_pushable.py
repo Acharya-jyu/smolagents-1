@@ -55,11 +55,11 @@ agent = CodeAgent(
 try:
     # Step 1: Save the agent locally to a folder
     temp_folder = "./butler_agent"
-    if os.path.exists(temp_folder):
-        shutil.rmtree(temp_folder)  # Remove folder if it exists
+    # if os.path.exists(temp_folder):
+    #     shutil.rmtree(temp_folder)  # Remove folder if it exists
     
-    print("Saving agent locally...")
-    agent.save(temp_folder)
+    # print("Saving agent locally...")
+    # agent.save(temp_folder)
     
 #     # Step 2: Create a README.md file
 #     readme_content = """# Butler Menu Agent
