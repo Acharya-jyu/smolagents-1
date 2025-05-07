@@ -30,7 +30,6 @@ agent = CodeAgent(
     model=model,
     tools=[suggest_menu, web_search, visit_webpage],
     managed_agents=[],
-    class='CodeAgent',
     max_steps=20,
     verbosity_level=1,
     grammar=None,
